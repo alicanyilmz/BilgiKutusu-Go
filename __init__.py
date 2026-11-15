@@ -1,0 +1,1 @@
+"""BilgiKutusu Go uygulama paketi."""
