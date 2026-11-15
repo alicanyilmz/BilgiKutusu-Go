@@ -1,0 +1,15 @@
+BİLGİKUTUSU GO'YA HOŞ GELDİN
+
+Bu, uygulamayla birlikte verilen kısa bir örnek belgedir.
+
+1. Kendi PDF, metin ve görsellerini içerik klasörüne kopyala.
+2. Web sayfasında Yenile düğmesine bas.
+3. Klasörlere dokunarak gezin; dosyaları aç veya indir.
+
+BilgiKutusu Go, ailenin en düşük seviyeli başlangıç paketidir.
+Yapay zekâ ve hazır ansiklopedi arşivi içermez.
+Dosyalar önceden depoya konulduğunda internet olmadan erişilebilir.
+Telefon ile depo arasındaki yerel ağ bağlantısı yine gereklidir.
+
+Geliştirici: Ali Can Yılmaz
+Telif hakkı (c) 2026 Ali Can Yılmaz. Bu belge proje LICENSE koşullarına tabidir.

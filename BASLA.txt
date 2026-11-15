@@ -1,0 +1,47 @@
+BİLGİKUTUSU GO — BAŞLANGIÇ
+
+Go, BilgiKutusu ailesinin en düşük seviyeli paketidir.
+
+HIZLI DENEME (Raspberry Pi / Linux)
+1. ZIP dosyasını çıkar.
+2. BilgiKutusu-Go klasöründe terminal aç.
+3. Şu komutu çalıştır:
+
+   python3 app.py
+
+4. Aynı cihazda tarayıcıyı aç ve şu adresi yaz:
+
+   http://127.0.0.1:8090
+
+5. Belgeler klasöründeki Baslangic.txt dosyasını açmayı dene.
+6. Durdurmak için terminalde Ctrl+C tuşlarına bas.
+
+Pİ AÇILINCA OTOMATİK ÇALIŞSIN
+Deneme uygulamasını durdur, sonra:
+
+   sudo bash scripts/install.sh
+
+Telefonla açmak için Pi ile aynı ağa bağlan ve gerçek Pi adresini kullan:
+
+   http://PI_IP_ADRESI:8090
+
+Pi'nin adresini görmek için: hostname -I
+Yeni Wi-Fi kurmak zorunlu değildir. Mevcut BilgiKutusu ağı kullanılabilir.
+
+DOSYALAR
+- README.md ve README.txt: projenin açıklaması ve kullanım kapsamı.
+- docs/KURULUM.md: dosya ekleme, SSD, güncelleme ve kaldırma.
+- docs/WIFI.md: isteğe bağlı Wi-Fi erişim noktası.
+- docs/TESTLER.md: geçen testler ve henüz cihazda denenmeyen kısımlar.
+- LICENSE: ücretsiz ve ticari olmayan kullanım koşulları.
+
+GITHUB'A EKLERKEN
+ZIP'in kendisini yüklemek yerine içindeki BilgiKutusu-Go klasörünün
+içeriğini deponun ana dizinine ekle. Böylece README.md, LICENSE ve app.py
+doğrudan depo ana dizininde olur. Kendi özel belgelerini yükleme.
+Bu paket GitHub'a otomatik olarak gönderilmedi.
+
+Hazır kitap, film, harita veya Wikipedia koleksiyonu pakete dahil değildir.
+Yapay zekâ yoktur. Kurucu mevcut BilgiKutusu ağını veya diskini değiştirmez.
+
+Geliştirici: Ali Can Yılmaz
