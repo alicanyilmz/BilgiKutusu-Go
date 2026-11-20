@@ -16,7 +16,7 @@ def main():
     parser.add_argument("interface", help="AP destekleyen ağ aygıtı, örneğin wlan1")
     args = parser.parse_args()
     if os.geteuid() != 0:
-        raise SystemExit("sudo python3 kurulum/wifi_hazirla.py wlan1 ile çalıştırın.")
+        raise SystemExit("sudo python3 install/wifi_hazirla.py wlan1 ile çalıştırın.")
     if not re.fullmatch(r"[a-zA-Z0-9_-]{1,15}", args.interface):
         raise SystemExit("Geçersiz ağ aygıtı adı.")
     if not shutil.which("nmcli") or not shutil.which("ip"):
@@ -77,7 +77,7 @@ method=disabled
         target.unlink(missing_ok=True)
         raise
     print("Profil hazır; mevcut bağlantı değiştirilmedi ve otomatik başlama kapalı.")
-    print("Etkinleştirme için belgeler/WIFI.md dosyasını okuyun.")
+    print("Etkinleştirme için docs/WIFI.md dosyasını okuyun.")
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ HIZLI DENEME (Raspberry Pi / Linux)
 Pİ AÇILINCA OTOMATİK ÇALIŞSIN
 Deneme uygulamasını durdur, sonra:
 
-   sudo bash kurulum/kur.sh
+   sudo bash install/kur.sh
 
 Telefonla açmak için Pi ile aynı ağa bağlan ve gerçek Pi adresini kullan:
 
@@ -29,16 +29,16 @@ Pi'nin adresini görmek için: hostname -I
 Yeni Wi-Fi kurmak zorunlu değildir. Mevcut BilgiKutusu ağı kullanılabilir.
 
 DOSYALAR
-- README.md ve belgeler/README.txt: projenin açıklaması ve kullanım kapsamı.
-- belgeler/KURULUM.md: dosya ekleme, SSD, güncelleme ve kaldırma.
-- belgeler/WIFI.md: isteğe bağlı Wi-Fi erişim noktası.
-- belgeler/TESTLER.md: geçen testler ve henüz cihazda denenmeyen kısımlar.
+- README.md ve docs/README.txt: projenin açıklaması ve kullanım kapsamı.
+- docs/KURULUM.md: dosya ekleme, SSD, güncelleme ve kaldırma.
+- docs/WIFI.md: isteğe bağlı Wi-Fi erişim noktası.
+- docs/TESTLER.md: geçen testler ve henüz cihazda denenmeyen kısımlar.
 - LICENSE: ücretsiz ve ticari olmayan kullanım koşulları.
 
 GITHUB'A EKLERKEN
 ZIP'in kendisini yüklemek yerine içindeki BilgiKutusu-Go klasörünün
 içeriğini deponun ana dizinine ekle. Böylece README.md, LICENSE ve baslat.sh
-doğrudan depo ana dizininde olur. Kodlar uygulama/ içinde bulunur. Kendi özel belgelerini yükleme.
+doğrudan depo ana dizininde olur. Kodlar app/ içinde bulunur. Kendi özel belgelerini yükleme.
 Bu paket GitHub'a otomatik olarak gönderilmedi.
 
 Hazır kitap, film, harita veya Wikipedia koleksiyonu pakete dahil değildir.

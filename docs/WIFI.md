@@ -15,7 +15,7 @@ nmcli device status
 AP destekli aygıtın örneğin `wlan1` ise:
 
 ```bash
-sudo python3 kurulum/wifi_hazirla.py wlan1
+sudo python3 install/wifi_hazirla.py wlan1
 ```
 
 Kendi şifreni iki kez yaz. Şifre ekrana basılmaz, kodun içine konmaz ve komut satırı argümanlarında taşınmaz. Profil, yalnızca root tarafından okunabilen NetworkManager dosyasına kaydedilir.

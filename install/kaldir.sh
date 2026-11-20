@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-[[ ${EUID} -eq 0 ]] || { echo 'sudo bash kurulum/kaldir.sh ile çalıştırın.'; exit 1; }
+[[ ${EUID} -eq 0 ]] || { echo 'sudo bash install/kaldir.sh ile çalıştırın.'; exit 1; }
 systemctl disable --now bilgikutusu-go.service 2>/dev/null || true
 # Keep content, config and service account so ownership and user data are preserved.
 rm -f -- /etc/systemd/system/bilgikutusu-go.service

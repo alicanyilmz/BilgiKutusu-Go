@@ -1,68 +1,98 @@
+<div align="center">
+
 # BilgiKutusu Go
 
-**BilgiKutusu ailesinin en düşük seviyeli, temel başlangıç paketi.**
+**İnternet olmasa da dosyalarına ulaş.**
 
-Raspberry Pi üzerindeki dosyalarına aynı yerel ağa bağlı telefon veya bilgisayardan ulaş. Önceden kaydettiğin içerikleri açmak için internet gerekmez; cihazla yerel ağ bağlantısı gerekir.
+Raspberry Pi tabanlı, sade ve taşınabilir çevrimdışı bilgi deposu.
 
-## Neler yapar?
+[![Platform](https://img.shields.io/badge/Platform-Raspberry%20Pi-C51A4A?logo=raspberrypi&logoColor=white)](https://www.raspberrypi.com/)
+[![Python](https://img.shields.io/badge/Python-3.9%2B-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Belgeler](https://img.shields.io/badge/Belgeler-Türkçe-blue)](docs/KULLANIM.md)
 
-- Klasörlerde gezinme ve açık klasörde ada göre filtreleme.
-- Dosya açma ve indirme.
+</div>
+
+---
+
+## Proje hakkında
+
+**BilgiKutusu Go**, Raspberry Pi üzerindeki dosyalara aynı yerel ağa bağlı telefon, tablet ve bilgisayarlardan erişim sağlayan temel bilgi deposudur. Önceden kaydedilmiş içerikleri açmak için internet gerekmez.
+
+Go başlangıç, Plus orta, Pro üst pakettir. Go yapay zekâ, hazır kitap, film, harita veya Wikipedia koleksiyonu içermez.
+
+> Proje geliştirme aşamasındadır. Raspberry Pi donanımı ve Wi-Fi üzerinde ayrıca deneme gerekir.
+
+## Mimari
+
+| Katman | Teknoloji | Görev |
+|---|---|---|
+| Cihaz | Raspberry Pi / Linux | Yerel dosya paylaşımı |
+| Uygulama | Python 3.9+ standart kütüphanesi | Dosya listeleme ve sunma |
+| Arayüz | HTML, CSS ve JavaScript | Telefon ve bilgisayardan kullanım |
+| Ayarlar | JSON | Adres, port ve içerik klasörü |
+| Otomatik başlatma | systemd | İsteğe bağlı hizmet kurulumu |
+
+## Özellikler
+
+- Klasörlerde gezinme ve açık klasörde dosya adına göre filtreleme.
+- Dosyaları açma ve indirme.
 - Türkçe, telefon ekranına uyumlu arayüz.
+- İnternet, dış API veya ek Python paketi gerektirmeyen çalışma.
 - İsteğe bağlı otomatik başlatma ve Wi-Fi profil hazırlama.
 
-Yapay zekâ ve hazır kitap, film, harita veya Wikipedia koleksiyonu içermez. Go, en temel pakettir; Plus orta, Pro üst pakettir.
+Wi-Fi profili hazırlama aracı mevcut bağlantıyı otomatik değiştirmez. Kullanım için cihazlar arasında yerel ağ bağlantısı gerekir.
 
 ## Hızlı başlangıç
 
-Python 3.9 veya yenisi bulunan Linux/Raspberry Pi cihazında, bu klasörde terminal aç:
+Depo ana klasöründe:
 
 ```bash
 bash baslat.sh
 ```
 
-Aynı cihazın tarayıcısında **http://127.0.0.1:8090** adresini aç. Durdurmak için `Ctrl+C` kullan.
+Aynı cihazda **http://127.0.0.1:8090** adresini aç. Durdurmak için `Ctrl+C` kullan.
 
-Pi her açıldığında çalışması ve aynı ağdaki telefondan erişim için:
+Otomatik başlatma ve yerel ağ erişimi için önce [kurulum rehberini](docs/KURULUM.md) oku:
 
 ```bash
-sudo bash kurulum/kur.sh
+sudo bash install/kur.sh
 ```
 
-Kurulumdan sonra `hostname -I` ile Pi'nin adresini öğren; telefonda `http://PI_IP_ADRESI:8090` adresini aç. Kurucu ayrı Go klasörleri kullanır; mevcut BilgiKutusu dosyalarını ve ağ ayarlarını değiştirmez.
+Kurulumdan sonra `hostname -I` ile Pi adresini öğren; aynı ağdaki telefonda `http://PI_IP_ADRESI:8090` adresini aç.
 
-## Düzenli klasör yapısı
+## Klasör düzeni
 
-| Dosya / klasör | İçeriği |
-| --- | --- |
+| Konum | İçerik |
+|---|---|
+| [app/](app/) | Python uygulaması ve web arayüzü |
+| [config/](config/) | Yerel deneme ayarları |
+| [content/](content/) | Örnek içerik ve kendi dosyaların |
+| [install/](install/) | Kurulum, güncelleme, durum ve Wi-Fi araçları |
+| [docs/](docs/) | Donanım, kurulum ve kullanım belgeleri |
+| [tests/](tests/) | Otomatik testler |
 | `baslat.sh` | Kurmadan hızlı deneme |
-| `uygulama/` | Python kodu ve web arayüzü |
-| `ayarlar/` | Yerel deneme ayarları |
-| `icerik/` | Örnek klasörler; kendi dosyaların için alan |
-| `kurulum/` | Kurma, güncelleme, durum, kaldırma ve Wi-Fi araçları |
-| `belgeler/` | Kullanım kılavuzları ve TXT açıklamalar |
-| `testler/` | Otomatik testler |
-| `LICENSE` | Lisansın tam metni |
 
-**Rehberler:** [İlk adımlar](belgeler/BASLA.txt) · [Kurulum](belgeler/KURULUM.md) · [Ayrıntılı kullanım](belgeler/KULLANIM.md) · [Wi-Fi](belgeler/WIFI.md)
+## Donanım ve belgeler
 
-## Test durumu
+[Donanım](docs/DONANIM.md) · [İlk adımlar](docs/BASLA.txt) · [Kurulum](docs/KURULUM.md) · [Kullanım](docs/KULLANIM.md) · [Wi-Fi](docs/WIFI.md)
+
+## Testler
 
 ```bash
-python3 -m unittest discover -s testler -v
+python3 -m unittest discover -s tests -v
 ```
 
-Dosya erişimi testleri başarılıdır. Raspberry Pi/Wi-Fi ve görsel tarayıcı denemesi henüz yapılmamıştır. [Test ayrıntıları](belgeler/TESTLER.md).
+Testler geçici içeriklerle gerçek HTTP isteklerini denetler. Donanım performansı, Wi-Fi ve systemd kurulumu için cihaz üzerinde ayrıca test gerekir. [Test kapsamı](docs/TESTLER.md).
 
 ## Gizlilik
 
-Pakette API anahtarı veya hazır şifre yoktur. Ad-soyad lisans ve geliştirici bildirimi için korunur. [Gizlilik ayrıntıları](belgeler/GIZLILIK.md).
+API anahtarı veya hazır şifre içermez. Kullanıcı hesabı ve HTTPS sağlamaz; güvenilir yerel ağda kullanım içindir. [Gizlilik belgesi](docs/GIZLILIK.md).
 
 ## Lisans ve katkı
 
-Kişisel ve eğitim amaçlı kullanım ücretsizdir. Ticari kullanım için önceden yazılı izin gerekir. [Lisans](LICENSE) · [Katkı koşulları](belgeler/KATKI.md).
+Kişisel ve eğitim amaçlı kullanım ücretsizdir. Ticari kullanım için önceden yazılı izin gerekir. Ticari kullanım kısıtlaması nedeniyle OSI tanımına uygun bir açık kaynak lisansı değildir.
 
-Ticari kullanım kısıtlaması nedeniyle OSI tanımına uygun bir açık kaynak lisansı değildir. Güvenilir yerel ağda kullanım içindir; kullanıcı hesabı veya HTTPS sağlamaz.
+[Lisans](LICENSE) · [Katkı koşulları](docs/KATKI.md)
 
 **Ali Can Yılmaz** · Sürüm 1.0.0  
 Telif hakkı © 2026 Ali Can Yılmaz. Tüm hakları saklıdır.

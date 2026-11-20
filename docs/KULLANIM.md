@@ -54,7 +54,7 @@ Aynı cihazın tarayıcısında **http://127.0.0.1:8090** adresini aç. Durdurma
 Mevcut BilgiKutusu içeriklerini silmeden, ayrı bir Go kurulumu yapar:
 
 ```bash
-sudo bash kurulum/kur.sh
+sudo bash install/kur.sh
 ```
 
 Kurulumdan sonra aynı ağdaki telefonda `http://PI_IP_ADRESI:8090` adresini aç. Pi adresini öğren:
@@ -99,10 +99,10 @@ Kaynak dosya yolunu kendi dosyana göre değiştir. Sonra web sayfasında **Yeni
 ## Testler
 
 ```bash
-python3 -m unittest discover -s testler -v
+python3 -m unittest discover -s tests -v
 ```
 
-Testler geçici klasörler ve gerçek HTTP istekleri kullanır. Raspberry Pi donanımı, Wi-Fi sürücüsü ve systemd kurulumu için ayrıca cihaz üzerinde deneme gerekir. Test kapsamı [belgeler/TESTLER.md](TESTLER.md) dosyasındadır.
+Testler geçici klasörler ve gerçek HTTP istekleri kullanır. Raspberry Pi donanımı, Wi-Fi sürücüsü ve systemd kurulumu için ayrıca cihaz üzerinde deneme gerekir. Test kapsamı [docs/TESTLER.md](TESTLER.md) dosyasındadır.
 
 ## Lisans ve katkılar
 
@@ -110,6 +110,6 @@ Proje **BilgiKutusu Go – Ücretsiz ve Ticari Olmayan Kullanım Lisansı** ile 
 
 Ticari kullanım kısıtlaması nedeniyle bu lisans OSI açık kaynak tanımına uygun değildir. Kaynak kodu görüntülenebilir ve lisans koşullarıyla kullanılabilir. Üçüncü taraf içerikler kendi lisanslarına tabidir.
 
-Katkı için [belgeler/KATKI.md](KATKI.md) dosyasını oku.
+Katkı için [docs/KATKI.md](KATKI.md) dosyasını oku.
 
 Telif hakkı © 2026 Ali Can Yılmaz. Tüm hakları saklıdır.

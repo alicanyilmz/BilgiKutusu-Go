@@ -6,20 +6,20 @@ ZIP'i çıkar ve `BilgiKutusu-Go` klasöründe terminal aç:
 
 ```bash
 python3 --version
-python3 uygulama/app.py --check
+python3 app/app.py --check
 bash baslat.sh
 ```
 
 Tarayıcı adresi: `http://127.0.0.1:8090`. Örnek belge `Belgeler` klasöründedir.
 
-Telefonla denemek için `ayarlar/config.json` içindeki `host` değerini `0.0.0.0` yap ve uygulamayı yeniden başlat. Telefon Pi ile aynı ağda olmalıdır. `hostname -I` çıktısından o ağa ait adresi seç; `http://ADRES:8090` biçiminde aç.
+Telefonla denemek için `config/config.json` içindeki `host` değerini `0.0.0.0` yap ve uygulamayı yeniden başlat. Telefon Pi ile aynı ağda olmalıdır. `hostname -I` çıktısından o ağa ait adresi seç; `http://ADRES:8090` biçiminde aç.
 
 ## 2. Otomatik başlama kur
 
 Deneme uygulamasını `Ctrl+C` ile durdurduktan sonra:
 
 ```bash
-sudo bash kurulum/kur.sh
+sudo bash install/kur.sh
 ```
 
 Kurucu paket indirmez. Python yoksa önce `sudo apt update` ve `sudo apt install python3` ile yükleyebilirsin; bu işlem internet gerektirir. Kurulum sonrasında Go'nun çalışması için internet gerekmez.
@@ -74,7 +74,7 @@ sudo systemctl restart bilgikutusu-go
 ## 5. Durum, ayarlar ve sorun giderme
 
 ```bash
-bash kurulum/durum.sh
+bash install/durum.sh
 sudo journalctl -u bilgikutusu-go -n 30 --no-pager
 ```
 
@@ -91,17 +91,17 @@ Kurulu ayarlar `/etc/bilgikutusu-go/config.json` içindedir. `host`, `port`, `co
 ## 6. Kaldırma
 
 ```bash
-sudo bash kurulum/kaldir.sh
+sudo bash install/kaldir.sh
 ```
 
-Bu komut Go uygulama kodunu ve hizmet tanımını kaldırır. İçerik, ayarlar, hizmet kullanıcısı ve Wi-Fi profilleri korunur. Yeniden kurulum için `sudo bash kurulum/guncelle.sh` kullanılabilir; bu komut korunmuş ayar ve içerikleri kullanır.
+Bu komut Go uygulama kodunu ve hizmet tanımını kaldırır. İçerik, ayarlar, hizmet kullanıcısı ve Wi-Fi profilleri korunur. Yeniden kurulum için `sudo bash install/guncelle.sh` kullanılabilir; bu komut korunmuş ayar ve içerikleri kullanır.
 
 ## 7. Güncelleme veya korunmuş kurulumu geri yükleme
 
 Yeni paketin klasöründe:
 
 ```bash
-sudo bash kurulum/guncelle.sh
+sudo bash install/guncelle.sh
 ```
 
 Uygulama kodu ve hizmet tanımı güncellenir; ayarlar ve içerik korunur. Eski kod varsa `/var/backups` altında yedeklenir. Kurulum ve güncelleme komutlarını yalnızca güvendiğin kaynak koduyla çalıştır.

@@ -2,7 +2,7 @@
 
 ## Tamamlanan kontroller
 
-Python 3.12.14 ortamında `python3 -m unittest discover -s testler -v` ile **19 test başarılı**:
+Python 3.12.14 ortamında `python3 -m unittest discover -s tests -v` ile **19 test başarılı**:
 
 - Ana sayfa ve yerel CSS/JavaScript/SVG dosyalarının HTTP yanıtları.
 - Sağlık denetimi, klasör gezinme, boş klasör ve olmayan dosya.
@@ -13,7 +13,7 @@ Python 3.12.14 ortamında `python3 -m unittest discover -s testler -v` ile **19 
 - HEAD isteği, yükleme/silme işlemlerinin kapalı olması.
 - Kalabalık klasör sınırı ve göreli ayar yolu.
 
-Ek olarak `node --check uygulama/web/app.js`, Python derleme kontrolü, Bash sözdizimi denetimi, `bash baslat.sh --check` ve `systemd-analyze verify` kontrolleri geçti.
+Ek olarak `node --check app/web/app.js`, Python derleme kontrolü, Bash sözdizimi denetimi, `bash baslat.sh --check` ve `systemd-analyze verify` kontrolleri geçti.
 
 ## Tamamlanmayan kontroller
 

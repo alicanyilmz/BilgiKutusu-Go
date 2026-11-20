@@ -7,7 +7,7 @@ APP_DIR=/opt/bilgikutusu-go
 CONTENT_DIR=/srv/bilgikutusu-go/icerik
 CONFIG_DIR=/etc/bilgikutusu-go
 UNIT=/etc/systemd/system/bilgikutusu-go.service
-if [[ ${EUID} -ne 0 ]]; then echo 'sudo bash kurulum/kur.sh ile çalıştırın.' >&2; exit 1; fi
+if [[ ${EUID} -ne 0 ]]; then echo 'sudo bash install/kur.sh ile çalıştırın.' >&2; exit 1; fi
 for program in python3 systemctl runuser useradd install; do
   command -v "$program" >/dev/null || { echo "Gerekli komut yok: $program" >&2; exit 1; }
 done
@@ -15,7 +15,7 @@ done
 # Never overwrite another installation or the existing BilgiKutusu contents.
 for target in "$APP_DIR" "$CONFIG_DIR" "$UNIT" /srv/bilgikutusu-go; do
   if [[ -e "$target" || -L "$target" ]]; then
-    echo "Kurulum durdu: $target zaten var. Önce belgeler/KURULUM.md dosyasını okuyun." >&2
+    echo "Kurulum durdu: $target zaten var. Önce docs/KURULUM.md dosyasını okuyun." >&2
     exit 1
   fi
 done
@@ -32,9 +32,9 @@ if id bilgikutusu-go >/dev/null 2>&1; then
 fi
 useradd --system --user-group --no-create-home --home-dir /nonexistent --shell /usr/sbin/nologin bilgikutusu-go
 install -d -m 0755 "$APP_DIR/web" "$CONFIG_DIR" "$CONTENT_DIR/Belgeler" "$CONTENT_DIR/Kitaplar" "$CONTENT_DIR/Gorseller"
-install -m 0644 "$SOURCE_DIR/uygulama/app.py" "$SOURCE_DIR/LICENSE" "$APP_DIR/"
-install -m 0644 "$SOURCE_DIR"/uygulama/web/* "$APP_DIR/web/"
-install -m 0644 "$SOURCE_DIR/icerik/Belgeler/Baslangic.txt" "$CONTENT_DIR/Belgeler/"
+install -m 0644 "$SOURCE_DIR/app/app.py" "$SOURCE_DIR/LICENSE" "$APP_DIR/"
+install -m 0644 "$SOURCE_DIR"/app/web/* "$APP_DIR/web/"
+install -m 0644 "$SOURCE_DIR/content/Belgeler/Baslangic.txt" "$CONTENT_DIR/Belgeler/"
 python3 - "$CONFIG_DIR/config.json" "$CONTENT_DIR" <<'PY'
 import json, sys
 from pathlib import Path
@@ -44,7 +44,7 @@ Path(sys.argv[1]).write_text(json.dumps({
 }, ensure_ascii=False, indent=2)+'\n')
 PY
 chmod 0644 "$CONFIG_DIR/config.json"
-install -m 0644 "$SOURCE_DIR/kurulum/bilgikutusu-go.service" "$UNIT"
+install -m 0644 "$SOURCE_DIR/install/bilgikutusu-go.service" "$UNIT"
 runuser -u bilgikutusu-go -- python3 "$APP_DIR/app.py" --config "$CONFIG_DIR/config.json" --check
 systemctl daemon-reload
 systemctl enable --now bilgikutusu-go.service

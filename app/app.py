@@ -291,7 +291,7 @@ def load_config(filename):
 
 def main():
     parser = argparse.ArgumentParser(description="BilgiKutusu Go yerel bilgi deposu")
-    parser.add_argument("--config", default=str(Path(__file__).resolve().parent.parent / "ayarlar" / "config.json"))
+    parser.add_argument("--config", default=str(Path(__file__).resolve().parent.parent / "config" / "config.json"))
     parser.add_argument("--check", action="store_true", help="Ayar ve içerik klasörünü denetle")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s: %(message)s")

@@ -1,7 +1,7 @@
 {
   "host": "127.0.0.1",
   "port": 8090,
-  "content_dir": "../icerik",
+  "content_dir": "../content",
   "max_clients": 8,
   "max_entries": 2000
 }

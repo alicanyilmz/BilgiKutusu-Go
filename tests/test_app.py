@@ -12,7 +12,7 @@ import unittest
 from urllib.parse import quote
 from unittest.mock import patch
 
-from uygulama import app
+from app import app
 
 
 class DepotTests(unittest.TestCase):
