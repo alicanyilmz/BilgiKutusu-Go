@@ -60,9 +60,9 @@ Pakette API anahtarı veya hazır şifre yoktur. Ad-soyad lisans ve geliştirici
 
 ## Lisans ve katkı
 
-Kişisel ve eğitim amaçlı kullanım ücretsizdir. Ticari kullanım için önceden yazılı izin gerekir. [Lisans](../LICENSE) · [Katkı koşulları](KATKI.md).
+MIT lisansı ile yayımlanır. Lisans ve telif hakkı bildirimi korunarak ticari kullanım, değiştirme ve dağıtıma izin verilir. [Lisans](../LICENSE) · [Katkı koşulları](KATKI.md).
 
-Ticari kullanım kısıtlaması nedeniyle OSI tanımına uygun bir açık kaynak lisansı değildir. Güvenilir yerel ağda kullanım içindir; kullanıcı hesabı veya HTTPS sağlamaz.
+Güvenilir yerel ağda kullanım içindir; kullanıcı hesabı veya HTTPS sağlamaz.
 
-**Ali Can Yılmaz** · Sürüm 1.0.0  
-Telif hakkı © 2026 Ali Can Yılmaz. Tüm hakları saklıdır.
+**alicanyilmz** · Sürüm 1.0.0  
+Telif hakkı © 2026 alicanyilmz.
